@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Imagens</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Classificador de Imagens</h1>
+        <p class="subtitle">Classifica a imagem com base nas classes: Ovelha, Cavalo, Elefante, Borboleta, Galinha, Vaca, Ovelha ou Esquilo</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <div id="upload-area" class="upload-area">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <h3>Arraste uma imagem ou clique para selecionar</h3>
+                <p>Formatos aceitos: JPG, PNG, GIF</p>
+                <input type="file" id="imageUpload" class="file-input" accept="image/*">
+                <button class="btn">Selecionar Imagem</button>
+            </div>
+            
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Processando imagem...</p>
+            </div>
+            
+            <div id="image-preview" class="image-preview">
+                <h3>Imagem Selecionada</h3>
+                <div class="preview-container">
+                    <img id="uploadedImage" alt="Imagem carregada">
+                </div>
+            </div>
+            
+            <div id="results" class="results" style="display:none;">
+                <h3 class="result-title">Resultados da Classificação</h3>
+                <div id="label-container"></div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Desenvolvido com TensorFlow.js e Teachable Machine</p>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
